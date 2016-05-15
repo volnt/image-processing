@@ -1,0 +1,22 @@
+<html ng-app="app">
+    <head>
+        <title>Project</title>
+    </head>
+    <body ng-controller="BodyCtrl">
+        <h1>Project title</h1>
+        <p>Project paragraph</p>
+        <div ng-if="User.user">
+            <p>Connected as {{ User.user.email }}</p>
+            <p><button ng-click="User.logout()">Logout</button></p>
+        </div>
+        <div ng-if="!User.user">
+            <p>Email : <input type="email" ng-model="input.email"></p>
+            <p>Password : <input type="password" ng-model="input.password"></p>
+            <p><button ng-click="User.login(input)">Login</button></p>
+            <p><button ng-click="User.register(input)">Register</button></p>
+        </div>
+    </body>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="static/js/app.js"></script>
+</html>
